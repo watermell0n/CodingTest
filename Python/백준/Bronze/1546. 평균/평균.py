@@ -4,10 +4,7 @@ input = sys.stdin.readline
 n = int(input())
 result = list(map(int, input().split()))
 m = max(result)
-
-for i in range(n):
-    result[i] = result[i]/m*100
-sum = 0
-for j in result:
-    sum += j
+sum=0
+for i in result:
+    sum += i/m*100
 print(sum/n)
