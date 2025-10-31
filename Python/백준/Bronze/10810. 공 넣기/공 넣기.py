@@ -1,12 +1,11 @@
-n,m = map(int, input().split())
-arr = list()
+import sys
+input = sys.stdin.readline
 
-for i in range(n):
-    arr.append(0)
-    
+n,m = map(int, input().split())
+arr = [0] * n
+
 for x in range(m):
     i,j,k = map(int, input().split())
-    for y in range(i-1,j):
-        arr[y] = k
+    arr[i-1:j] = [k for y in range(j-i+1)]
         
 print(' '.join(map(str, arr)))
