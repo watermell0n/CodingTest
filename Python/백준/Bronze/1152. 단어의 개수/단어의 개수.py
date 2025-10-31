@@ -1,2 +1,2 @@
-arr = list(input().split())
+arr = input().split()
 print(len(arr))
