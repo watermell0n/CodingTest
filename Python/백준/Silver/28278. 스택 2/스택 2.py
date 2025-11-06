@@ -1,10 +1,10 @@
 import sys
 input = sys.stdin.readline
 
-n = int(input().strip())
+n = int(input())
 stack = []
 for i in range(n):
-    order = list(map(int, input().strip().split()))
+    order = list(map(int, input().split()))
     if order[0]==1:
         stack.append(order[1])
     elif order[0]==2:
