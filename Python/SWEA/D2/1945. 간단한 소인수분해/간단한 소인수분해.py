@@ -40,14 +40,9 @@ T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 for test_case in range(1, T + 1):
     n = int(input())
-    arr = [2,3,5,7,11]
     exp = {2:0, 3:0, 5:0, 7:0, 11:0}
-    while (n not in arr):
-        for quo in arr:
-            if (n%quo == 0):
-                n //= quo
-                exp[quo] += 1
-                break
-    exp[n] += 1
-    print(f"#{test_case}", end=' ')
-    print(' '.join(map(str, exp.values())))
+    for num in exp.keys():
+        while (n%num == 0):
+            n //= num
+            exp[num] += 1         
+    print(f"#{test_case}", ' '.join(map(str, exp.values())))
