@@ -47,12 +47,10 @@ for test_case in range(1, T + 1):
         a, b = b, a  
     idx = n
     s = 0
-    while (idx <= m):
-        ex_sum = 0
-        b_sub = b[idx-n:idx]
+    for j in range(m-n+1):
+        ex_s = 0
         for i in range(n):
-            ex_sum += (a[i] * b_sub[i])
-        if ex_sum > s:
-            s = ex_sum
+            ex_s += (a[i] * b[i+j])
+        s = max(s, ex_s)
         idx += 1
     print(f"#{test_case} {s}")
