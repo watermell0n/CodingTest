@@ -11,6 +11,12 @@ T = int(input())
 for test_case in range(1, T + 1):
     n, l = map(int, input().split())
     dic = [list(map(int, input().split())) for _ in range(n)]
-    maxScore = 0
-    dfs(0,0,0)
-    print(f"#{test_case} {maxScore}")
+    #maxScore = 0
+    #dfs(0,0,0)
+    #print(f"#{test_case} {maxScore}")
+    
+    dp = [0]*(l+1)
+    for t, k in dic:
+        for j in range(l,k-1,-1):
+            dp[j] = max(dp[j], dp[j-k]+t)  
+    print(f"#{test_case} {max(dp)}")
