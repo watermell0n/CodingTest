@@ -5,8 +5,7 @@ for test_case in range(1, 11):
     cnt = 0
     for i in range(2,n-2):
         leftMax = max(h[i-2], h[i-1])
-        leftCnt = (h[i]-leftMax) if (h[i]>leftMax) else 0
         rightMax = max(h[i+2], h[i+1])
-        rightCnt = (h[i]-rightMax) if (h[i]>rightMax) else 0
-        cnt += min(leftCnt, rightCnt)
+        totalMax = max(leftMax, rightMax)
+        cnt += (h[i]-totalMax) if (h[i]>totalMax) else 0
     print(f"#{test_case} {cnt}")
