@@ -1,6 +1,13 @@
 T = int(input())
 for test_case in range(1, T + 1):
     memory = input()
+    ans = 1 if memory[0]=='1' else 0
+    for i in range(1,len(memory)):
+        if (memory[i] != memory[i-1]):
+            ans += 1  
+    print(f"#{test_case} {ans}")
+
+    '''
     l = len(memory)
     bit = ['0']*l
     cnt = 0
@@ -15,3 +22,4 @@ for test_case in range(1, T + 1):
             prev = 0
             cnt += 1
     print(f"#{test_case} {cnt}")
+    '''
